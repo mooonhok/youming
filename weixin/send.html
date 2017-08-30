@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<link rel="stylesheet" href="css/woyaojijian.css">
+		<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+		<title>我要寄件</title>
+
+	</head>
+
+	<body>
+		<div class="box">
+			<!-- top -->
+			<div class="top">
+				<div class="top1">
+					<div class="wenzi"><span class="span1">寄</span>件人详细地址</div>
+					<div class="shuru">
+					</div>
+					<div class="fuhao"><img src="images/left_arrow.png" alt=""></div>
+				</div>
+
+				<div class="top2">
+					<div class="wenzi"><span class="span2">收</span>件人详细地址</div>
+					<div class="shuru1">
+					</div>
+					<div class="fuhao"><img src="images/left_arrow.png" alt=""></div>
+				</div>
+
+			</div>
+
+			<!-- center -->
+			<div class="center">
+
+				<div class="center_1">
+					<div class="wenzi">货物品名</div>
+					<div class="text">
+						<input type="text" placeholder="必填项" class="huowu">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+				<div class="center_3">
+					<div class="wenzi">重量(吨)</div>
+					<div class="text3">
+						<input type="number" placeholder="必填项" class="zhong">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+				<div class="center_3">
+					<div class="wenzi">体积(m³)</div>
+					<div class="text4">
+						<input type="number" placeholder="必填项" class="tiji">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+				<div class="center_4">
+					<div class="wenzi">包装</div>
+					<div class="text1">
+						<input type="text" placeholder="必填项" class="baozhuang" disabled="disabled">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+				<div class="center_5">
+					<div class="wenzi">件数</div>
+					<div class="text1">
+						<input type="number" placeholder="必填项" class="jianshu">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+				<div class="center_6">
+					<div class="wenzi">备注</div>
+					<div class="text1">
+						<input type="text" placeholder="门店自寄" class="needs">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+			</div>
+
+			<!-- foot -->
+			<div class="foot">
+				<div class="foot1">
+					<div class="wenzi">货物价值</div>
+					<div class="text">
+						<input type="number" placeholder="必填项" class="jiazhi">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+				<div class="foot2">
+					<div class="wenzi">付款方式</div>
+					<div class="text2">
+						<input type="text" placeholder="必填项" class="money" disabled="disabled">
+					</div>
+					<!-- <div class="fuhao"><img src="images/left_arrow.png" alt=""></div> -->
+				</div>
+
+			</div>
+
+			<!-- tijiao -->
+			<div class="tijiao">
+				提交
+			</div>
+
+			<div class="TT"></div>
+		</div>
+
+		<!-- box2 -->
+		<div class="box2">
+			<div class="box2-1">
+				<div class="jj">
+					<h5>寄件地址</h5>
+				</div>
+				<form>
+					<div class="name1">
+						<label for="">姓名</label>
+						<div class="name2">
+							<input type="text" class="name_1">
+						</div>
+					</div>
+					<div class="phone1">
+						<label for="">联系方式</label>
+						<div class="phone2">
+							<input type="tel" class="phone_1">
+						</div>
+					</div>
+					<div class="dizhi1">
+						<label for="">地址</label>
+
+						<div class="dizhi2">
+							<select name="province" id="province1" onchange="getPro1()" class="pro">
+								<option value="">请选择</option>
+							</select>
+							<select name="city" id="city1" class="cit">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+					<div class="dizhi3">
+						<div class="dizhi3-1">
+							<textarea id="dizhi_1" cols="27" rows="5" placeholder="请填写详细地址"></textarea>
+						</div>
+					</div>
+					<div class="tijiao1" id="subaddress2">
+						添加新地址
+					</div>
+				</form>
+			</div>
+			<div class="kong"></div>
+			<div class="box1" id="box10">
+
+				<div style="clear:both;"></div>
+			</div>
+			<div class="tijiao2" id="subaddress3">提交</div>
+			<div style="clear:both;"></div>
+		</div>
+
+		<!-- box3 -->
+		<div class="box3">
+			<div class="box2-1">
+				<div class="jj">
+					<h5>收货地址</h5>
+				</div>
+				<form>
+					<div class="name1">
+						<label for="">姓名</label>
+						<div class="name2">
+							<input type="text" class="name_2">
+						</div>
+					</div>
+					<div class="phone1">
+						<label for="">联系方式</label>
+						<div class="phone2">
+							<input type="tel" class="phone_2">
+						</div>
+					</div>
+					<div class="dizhi1">
+						<label for="">地址</label>
+
+						<div class="dizhi2">
+							<select name="province" id="province2" onchange="getPro2()" class="pro1">
+								<option value="">请选择</option>
+							</select>
+							<select name="city" id="city2" class="cit1">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+					<div class="dizhi3">
+						<div class="dizhi3-1">
+							<textarea id="dizhi_2" cols="27" rows="5" placeholder="请填写详细地址"></textarea>
+						</div>
+					</div>
+					<div class="tijiao2" id="subaddress4">
+						添加新地址
+					</div>
+				</form>
+			</div>
+			<div class="kong"></div>
+			<div class="box1" id="box11">
+
+				<div style="clear:both;"></div>
+			</div>
+			<div class="tijiao2" id="subaddress5">提交</div>
+			<div style="clear:both;"></div>
+		</div>
+		<!-- box4 -->
+		<div class="box4">
+			<div class="box4-1">
+				<h5>包装类型</h5>
+				<div class="box4-2">
+					<div class="box4-2-1" value="1">纸箱</div>
+					<div class="box4-2-2" value="2">木箱</div>
+					<div class="box4-2-3" value="3">油布</div>
+				</div>
+				<div class="box4-3">
+					<div class="box4-3-1" value="4">编织袋</div>
+					<div class="box4-3-2" value="5">集装箱</div>
+					<div class="box4-3-3" value="6">无包装</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- box5 -->
+
+		<!--  <div class="box5">
+    	<div class="box5-1">
+    		<h5>需求</h5>
+    		<div class="box5-2">
+    		<div class="box5-3">
+    			<div class="box5-2-1" onclick="a()">上门提货</div>
+    			<div class="box5-2-2" onclick="b()">开票申请</div>
+    		</div>
+    		<div class="box5-3">
+    			<div class="box5-2-3" onclick="c()">加急</div>
+    			<div class="box5-2-4" onclick="d()">送货上门</div>
+    		</div>	
+    		</div>
+    		<div class="box5-4">提交</div>
+    	</div>
+    	
+    </div> -->
+
+		<!-- box6 -->
+		<div class="box6">
+			<div class="box6-1">
+				<h5>付款方式</h5>
+				<div class="box6-2">
+					<div class="box6-2-1" value="到付">到付</div>
+					<div class="box6-2-2" value="现付">现付</div>
+					<div class="box6-2-3" value="月付">月付</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://bootboxjs.com/bootbox.js"></script>
+
+	<script type="text/javascript">
+		$(".box2").css("display", "none");
+
+		$(document).ready(function() {
+			$(".top1").on("click", function() {
+				// alert('ok');
+				$(".box2").css("display", "block");
+				$(".box2").css("z-index", "100");
+			})
+
+			//  $(".tijiao1").click(function(){
+			//  	$(".shuru").html($("#xdizhi").val());	 		 	
+			//  	$(".box2").css("display","none");
+			//  })
+		})
+	</script>
+	<script type="text/javascript">
+		$(".box3").css("display", "none");
+		$(document).ready(function() {
+			$(".top2").on("click", function() {
+				$(".box3").css("display", "block");
+				$(".box3").css("z-index", "100");
+			})
+			//  $(".tijiao2").click(function(){
+			//  	$(".shuru1").html($("#xdizhi2").val());
+			//  	$(".box3").css("display","none");
+			//  })
+		})
+	</script>
+	<script type="text/javascript">
+		$(".box4").css("display", "none");
+		$(".center_4").on("click", function() {
+			$(".box4").css("display", "block");
+		})
+		$(".box4-2-1").on("click", function() {
+			var box4 = $(this).html();
+			$(".baozhuang").val(box4);
+			$(".box4").css("display", "none");
+		})
+		$(".box4-2-2").on("click", function() {
+			var box4 = $(this).html();
+			$(".baozhuang").val(box4);
+			$(".box4").css("display", "none");
+		})
+		$(".box4-2-3").on("click", function() {
+			var box4 = $(this).html();
+			$(".baozhuang").val(box4);
+			$(".box4").css("display", "none");
+		})
+		$(".box4-3-1").on("click", function() {
+			var box4 = $(this).html();
+			$(".baozhuang").val(box4);
+			$(".box4").css("display", "none");
+		})
+		$(".box4-3-2").on("click", function() {
+			var box4 = $(this).html();
+			$(".baozhuang").val(box4);
+			$(".box4").css("display", "none");
+		})
+		$(".box4-3-3").on("click", function() {
+			var box4 = $(this).html();
+			$(".baozhuang").val(box4);
+			$(".box4").css("display", "none");
+		})
+	</script>
+
+	<!-- 	<script type="text/javascript">
+		var needs = "0000";	
+		$(".box5").css("display","none");
+		$(".center_6").on("click",function(){
+			$(".box5").css("display","block");
+		})
+		var count1=0;
+		var count2=0;
+		var count3=0;
+		var count4=0;
+		function a(){
+			count1++;
+			if(count1%2==1){
+				$(".box5-2-1").css("background","orange");
+			}else{
+				$(".box5-2-1").css("background","blue");
+			}
+		}
+		function b(){
+			count2++;
+			if(count2%2==1){
+				$(".box5-2-2").css("background","orange");
+			}else{
+				$(".box5-2-2").css("background","blue");
+			}
+		}
+		function c(){
+			count3++;
+			if(count3%2==1){
+				$(".box5-2-3").css("background","orange");
+			}else{
+				$(".box5-2-3").css("background","blue");
+			}
+		}
+		function d(){
+			count4++;
+			if(count4%2==1){
+				$(".box5-2-4").css("background","orange");
+			}else{
+				$(".box5-2-4").css("background","blue");
+			}
+		}
+
+		$(".box5-4").on("click",function(){
+			if(count1%2==1&&count2%2==1&&count3%2==1&&count4%2==1){
+				$(".need").val("上门提货/开票申请/加急/送货上门");
+				needs="1111";
+            }else if(count1%2==1&&count2%2==1&&count3%2==1&&count4%2==0){
+            	$(".need").val("上门提货/开票申请/加急");
+            	needs="1110";
+            }else if(count1%2==1&&count2%2==1&&count3%2==0&&count4%2==0){
+            	$(".need").val("上门提货/开票申请");
+            	needs="1100";
+            }else if(count1%2==1&&count2%2==0&&count3%2==0&&count4%2==0){
+            	$(".need").val("上门提货");
+            	needs="1000";
+            }else if(count1%2==0&&count2%2==1&&count3%2==1&&count4%2==1){
+            	$(".need").val("开票申请/加急/送货上门");
+            	needs="0111";
+            }else if(count1%2==0&&count2%2==0&&count3%2==1&&count4%2==1){
+            	$(".need").val("加急/送货上门");
+            	needs="0011";
+            }else if(count1%2==0&&count2%2==0&&count3%2==0&&count4%2==1){
+            	$(".need").val("送货上门");
+            	needs="0001";
+            }else if(count1%2==0&&count2%2==1&&count3%2==0&&count4%2==1){
+            	$(".need").val("开票申请/送货上门");
+            	needs="0101";
+            }else if(count1%2==0&&count2%2==1&&count3%2==0&&count4%2==0){
+            	$(".need").val("开票申请");
+            	needs="0100";
+            }else if(count1%2==0&&count2%2==0&&count3%2==1&&count4%2==0){
+            	$(".need").val("加急");
+            	needs="0010";
+            }else if(count1%2==0&&count2%2==0&&count3%2==0&&count4%2==0){
+            	$(".need").val("默认门店自寄");
+            	needs="0000";
+            }else if(count1%2==0&&count2%2==1&&count3%2==1&&count4%2==0){
+            	$(".need").val("开票申请/加急");
+            	needs="0110";
+            }else if(count1%2==1&&count2%2==0&&count3%2==0&&count4%2==1){
+            	$(".need").val("上门提货/送货上门");
+				needs="1001";
+            }else if(count1%2==1&&count2%2==0&&count3%2==1&&count4%2==1){
+            	$(".need").val("上门提货/加急/送货上门");
+            	needs="1011";
+            }else if(count1%2==1&&count2%2==0&&count3%2==1&&count4%2==0){
+            	$(".need").val("上门提货/加急");
+            	needs="1010";
+            }else if(count1%2==1&&count2%2==1&&count3%2==0&&count4%2==1){
+            	$(".need").val("上门提货/开票申请/送货上门");
+            	needs="1101";
+            }
+								
+			$(".box5").css("display","none");	
+		})
+	</script> -->
+
+	<script type="text/javascript">
+		$(".box6").css("display", "none");
+		$(".foot2").on("click", function() {
+			$(".box6").css("display", "block");
+		})
+		$(".box6-2-1").on("click", function() {
+			var box6 = $(this).html();
+			$(".money").val(box6);
+			$(".box6").css("display", "none");
+		})
+		$(".box6-2-2").on("click", function() {
+			var box4 = $(this).html();
+			$(".money").val(box4);
+			$(".box6").css("display", "none");
+		})
+		$(".box6-2-3").on("click", function() {
+			var box4 = $(this).html();
+			$(".money").val(box4);
+			$(".box6").css("display", "none");
+		})
+	</script>
+	<script>
+		//获取省份和城市列表1
+		$.ajax({
+			url: "http://mooonhok-cloudware.daoapp.io/city.php/province",
+			beforeSend: function(request) {
+				request.setRequestHeader("tenant-id", "Chenxizhang");
+			},
+			dataType: 'json',
+			type: 'get',
+			contentType: "application/json;charset=utf-8",
+			data: JSON.stringify({}),
+			success: function(msg) {
+				//                        alert("提交goods结果"+msg.result+"/////"+msg.desc+"//////"+msg.province);
+				for(var i = 0; i < msg.province.length; i++) {
+					$("#province1").append('<option value="' + msg.province[i].id + '">' + msg.province[i].name + '</option>');
+				}
+			},
+			error: function(e) {
+				bootbox.setLocale("zh_CN");
+				bootbox.alert({
+					message: "省份列表1信息出错!",
+					size: "small"
+				})
+
+			}
+		});
+
+		function getPro1() {
+			$("#city1").empty();
+			var pid = $("#province1 option:selected").val();
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/city.php/city?pid=" + pid,
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "Chenxizhang");
+				},
+				dataType: 'json',
+				type: 'get',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({}),
+				success: function(msg) {
+					//                      alert("city结果"+msg.result+"/////"+msg.desc+"//////"+msg.city);
+					for(var i = 0; i < msg.city.length; i++) {
+						$("#city1").append('<option value="' + msg.city[i].id + '">' + msg.city[i].name + '</option>');
+					}
+				},
+				error: function(e) {
+					bootbox.setLocale("zh_CN");
+					bootbox.alert({
+						message: "城市1列表信息出错!",
+						size: "small"
+					})
+				}
+			});
+		}
+	</script>
+	<script>
+		//获取城市列表2
+		$.ajax({
+			url: "http://mooonhok-cloudware.daoapp.io/city.php/province",
+			beforeSend: function(request) {
+				request.setRequestHeader("tenant-id", "Chenxizhang");
+			},
+			dataType: 'json',
+			type: 'get',
+			contentType: "application/json;charset=utf-8",
+			data: JSON.stringify({}),
+			success: function(msg) {
+				//                        alert("提交goods结果"+msg.result+"/////"+msg.desc+"//////"+msg.province);
+				for(var i = 0; i < msg.province.length; i++) {
+					$("#province2").append('<option value="' + msg.province[i].id + '">' + msg.province[i].name + '</option>');
+				}
+			},
+			error: function(e) {
+				bootbox.setLocale("zh_CN");
+				bootbox.alert({
+					message: "省份列表2信息出错!",
+					size: "small"
+				})
+			}
+		});
+
+		function getPro2() {
+			$("#city2").empty();
+			var pid = $("#province2 option:selected").val();
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/city.php/city?pid=" + pid,
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "Chenxizhang");
+				},
+				dataType: 'json',
+				type: 'get',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({}),
+				success: function(msg) {
+					//                      alert("city结果"+msg.result+"/////"+msg.desc+"//////"+msg.city);
+					for(var i = 0; i < msg.city.length; i++) {
+						$("#city2").append('<option value="' + msg.city[i].id + '">' + msg.city[i].name + '</option>');
+					}
+				},
+				error: function(e) {
+					bootbox.setLocale("zh_CN");
+					bootbox.alert({
+						message: "城市2列表信息出错!",
+						size: "small"
+					})
+				}
+			});
+		}
+	</script>
+
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script>
+		//判断openid是否已经被注册
+		var openid = $.cookie('openid');
+		if(openid != null) {
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/customer.php/wx_openid?wx_openid=" + openid,
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'get',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+
+				}),
+				success: function(msg) {
+					//	alert("用户注册成功" + msg.result + "/////" + msg.desc + "//////" + msg.customer);
+					if(msg.result == 0) {
+						window.location.href = "http://mooonhok-cloudware.daoapp.io/weixin/register.html?page=0";
+					}
+					// alert(openid);
+
+				},
+				error: function(xhr) {
+					bootbox.setLocale("zh_CN");
+					bootbox.alert({
+						message: "获取后台失败！" + xhr.responseText,
+						size: "small"
+					})
+
+				}
+
+			});
+		}
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+			url: "http://mooonhok-cloudware.daoapp.io/customer.php/wxaddress?type=1&wx_openid=" + openid,
+			beforeSend: function(request) {
+				request.setRequestHeader("tenant-id", "1");
+			},
+			dataType: 'json',
+			type: 'get',
+			contentType: "application/json;charset=utf-8",
+			data: JSON.stringify({}),
+			success: function(msg) {
+				alert("cxdz");
+				for(var i = 0; i < msg.wxmessage.length; i++) {
+					var a = '<div class="name"><p>' + msg.wxmessage[i].customer_name + '</p></div><div class="phone"><p>' +
+						msg.wxmessage[i].customer_phone + '</p></div><div class="dizhi"><p><span>' +
+						msg.wxmessage[i].customer_city + '</span>' +
+						msg.wxmessage[i].customer_address + '</p></div><div class="xian"></div><div class="tu"><input type="radio" class="rad1" value=' +
+						msg.wxmessage[i].customer_id + '>' +
+						'</div><div class="tu2"><div class="bj"><img src="images/bj.png" alt=""></div>' +
+						'<div class="sc"><img src="images/sc.png" alt=""></div><div class="sc1">删除</div></div><div class="xian1"></div>';
+					$("#box10").append(a);
+					$("#subaddress3").on('click', function() {
+						customer_send_id = $("input[class='rad1']:checked").val();
+						//	alert(customer_send_id);
+						$(".shuru").html($("input[class='rad1']:checked").parent().prev().prev().text());
+						$(".box2").css("display", "none");
+					});
+				}
+			},
+			error: function(xhr) {
+				alert("获取地址数据失败" + xhr.responseText);
+			}
+		});
+
+		$.ajax({
+			url: "http://mooonhok-cloudware.daoapp.io/customer.php/wxaddress?type=2&wx_openid=" + openid,
+			beforeSend: function(request) {
+				request.setRequestHeader("tenant-id", "1");
+			},
+			dataType: 'json',
+			type: 'get',
+			contentType: "application/json;charset=utf-8",
+			data: JSON.stringify({
+
+			}),
+			success: function(msg) {
+				alert("cxdz");
+				for(var i = 0; i < msg.wxmessage.length; i++) {
+					var a = '<div class="name"><p>' + msg.wxmessage[i].customer_name + '</p></div><div class="phone"><p>' +
+						msg.wxmessage[i].customer_phone + '</p></div><div class="dizhi"><p><span>' +
+						msg.wxmessage[i].customer_city + '</span>' +
+						msg.wxmessage[i].customer_address + '</p></div><div class="xian"></div><div class="tu"><input type="radio"  class="rad2"  value=' +
+						msg.wxmessage[i].customer_id + '>' +
+						'</div><div class="tu2"><div class="bj"><img src="images/bj.png" alt=""></div>' +
+						'<div class="sc"><img src="images/sc.png" alt=""></div><div class="sc1">删除</div></div><div class="xian1"></div>';
+					$("#box11").append(a);
+					$("#subaddress5").on('click', function() {
+						customer_accept_id = $("input[class='rad2']:checked").val();
+						//alert(customer_accept_id);
+						$(".shuru1").html($("input[class='rad2']:checked").parent().prev().prev().text());
+						$(".box3").css("display", "none");
+					});
+				}
+			},
+			error: function(xhr) {
+				alert("获取地址数据失败" + xhr.responseText);
+			}
+		});
+	</script>
+	<script type="text/javascript">
+		var customer_send_id = null;
+		var customer_accept_id = null;
+		$("#subaddress2").on("click", function() {
+			var name_1 = $(".name_1").val();
+			var phone_1 = $(".phone_1").val();
+
+			var cit = $("#city1").val();
+			var dizhi_1 = $("#dizhi_1").val();
+			//$("#box10").html("");
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/customer.php/plus_customer",
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'post',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					customer_name: name_1,
+					customer_phone: phone_1,
+					city_id: cit,
+					address: dizhi_1,
+					type: 1,
+					wx_openid: openid,
+				}),
+				success: function(msg) {
+					alert("添加地址");
+					$.ajax({
+						url: "http://mooonhok-cloudware.daoapp.io/customer.php/wxaddress?type=1&wx_openid=" + openid,
+						beforeSend: function(request) {
+							request.setRequestHeader("tenant-id", "1");
+						},
+						dataType: 'json',
+						type: 'get',
+						contentType: "application/json;charset=utf-8",
+						data: JSON.stringify({}),
+						success: function(msg) {
+							alert("cxdz");
+							for(var i = 0; i < msg.wxmessage.length; i++) {
+								var a = '<div class="name"><p>' + msg.wxmessage[i].customer_name + '</p></div><div class="phone"><p>' +
+									msg.wxmessage[i].customer_phone + '</p></div><div class="dizhi"><p><span>' +
+									msg.wxmessage[i].customer_city + '</span>' +
+									msg.wxmessage[i].customer_address + '</p></div><div class="xian"></div><div class="tu"><input type="radio" class="rad1" value=' +
+									msg.wxmessage[i].customer_id + '>' +
+									'</div><div class="tu2"><div class="bj"><img src="images/bj.png" alt=""></div>' +
+									'<div class="sc"><img src="images/sc.png" alt=""></div><div class="sc1">删除</div></div><div class="xian1"></div>';
+								$("#box10").append(a);
+								$("#subaddress3").on('click', function() {
+									customer_send_id = $("input[class='rad1']:checked").val();
+									//	alert(customer_send_id);
+									$(".shuru").html($("input[class='rad1']:checked").parent().prev().prev().text());
+									$(".box2").css("display", "none");
+								});
+							}
+						},
+						error: function(xhr) {
+							alert("获取地址数据失败" + xhr.responseText);
+						}
+					});
+				},
+
+				error: function(xhr) {
+					alert("获取数据失败" + xhr.responseText);
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$("#subaddress4").on("click", function() {
+			var name_2 = $(".name_2").val();
+			var phone_2 = $(".phone_2").val();
+			var cit1 = $("#city2").val();
+			var dizhi_2 = $("#dizhi_2").val();
+			//	$("#box11").html("");
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/customer.php/plus_customer",
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'post',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					customer_name: name_2,
+					customer_phone: phone_2,
+					city_id: cit1,
+					address: dizhi_2,
+					type: 2,
+					wx_openid: openid,
+				}),
+				success: function(msg) {
+					alert("添加地址");
+					$.ajax({
+						url: "http://mooonhok-cloudware.daoapp.io/customer.php/wxaddress?type=2&wx_openid=" + openid,
+						beforeSend: function(request) {
+							request.setRequestHeader("tenant-id", "1");
+						},
+						dataType: 'json',
+						type: 'get',
+						contentType: "application/json;charset=utf-8",
+						data: JSON.stringify({
+
+						}),
+						success: function(msg) {
+							alert("cxdz");
+							for(var i = 0; i < msg.wxmessage.length; i++) {
+								var a = '<div class="name"><p>' + msg.wxmessage[i].customer_name + '</p></div><div class="phone"><p>' +
+									msg.wxmessage[i].customer_phone + '</p></div><div class="dizhi"><p><span>' +
+									msg.wxmessage[i].customer_city + '</span>' +
+									msg.wxmessage[i].customer_address + '</p></div><div class="xian"></div><div class="tu"><input type="radio"  class="rad2"  value=' +
+									msg.wxmessage[i].customer_id + '>' +
+									'</div><div class="tu2"><div class="bj"><img src="images/bj.png" alt=""></div>' +
+									'<div class="sc"><img src="images/sc.png" alt=""></div><div class="sc1">删除</div></div><div class="xian1"></div>';
+								$("#box11").append(a);
+								$("#subaddress5").on('click', function() {
+									customer_accept_id = $("input[class='rad2']:checked").val();
+									//alert(customer_accept_id);
+									$(".shuru1").html($("input[class='rad2']:checked").parent().prev().prev().text());
+									$(".box3").css("display", "none");
+								});
+							}
+						},
+						error: function(xhr) {
+							alert("获取地址数据失败" + xhr.responseText);
+						}
+					});
+				},
+
+				error: function(xhr) {
+					alert("获取数据失败" + xhr.responseText);
+				}
+			});
+
+		})
+	</script>
+	<script type="text/javascript">
+		$(".tijiao").on('click', function() {
+
+			var huowu = $(".huowu").val();
+			var str1 = $(".zhong").val();
+			var zhong = str1 * 1;
+			var str2 = $(".tiji").val();
+			var tiji = str2 * 1;
+			var baozhuang = parseInt($(".baozhuang").val());
+			var jianshu = parseInt($(".jianshu").val());
+			var needs = $(".needs").val();
+			var jiazhi = parseInt($(".jiazhi").val());
+			var money = $(".money").val();
+			var str = 0;
+			if(money == "到付") {
+				str = 1;
+			} else if(money == "现付") {
+				str = 0;
+			} else if(money == "月付") {
+				str = 2;
+			}
+			if(customer_send_id == "" || customer_accept_id == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "发货人信息不全",
+					size: 'small'
+				})
+			} else if(customer_accept_id == "" || customer_accept_id == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "收件人信息不全",
+					size: 'small'
+				})
+			} else if(huowu == "") {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "缺少货物名",
+					size: 'small'
+				})
+			} else if(zhong == "" || zhong == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "缺少货物重量或货物重量不能为0",
+					size: 'small'
+				})
+			} else if(tiji == "" || tiji == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "缺少货物体积或体积不能为0",
+					size: 'small'
+				})
+			} else if(baozhuang == "") {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "未选择货物包装",
+					size: 'small'
+				})
+			} else if(jianshu == "" || jianshu == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "缺少货物件数或货物件数不能为0",
+					size: 'small'
+				})
+			} else if(jiazhi == "" || jiazhi == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "缺少货物价值或货物价值不能为0",
+					size: 'small'
+				})
+			} else if(str == 0) {
+				bootbox.setLocale("zh_Cn");
+				bootbox.alert({
+					message: "未选择付款方式",
+					size: 'small'
+				})
+			} else {
+				alert(shuru + jname + jphone + shuru1 + jname1 + jphone1 + huowu + zhong + tiji + baozhuang + jianshu + needs + jiazhi + str)
+				$.ajax({
+					url: "http://mooonhok-cloudware.daoapp.io/goods.php/goods",
+					beforeSend: function(request) {
+						request.setRequestHeader("tenant-id", "Chenxizhang");
+					},
+					dataType: 'json',
+					type: 'post',
+					contentType: "application/json;charset=utf-8",
+					data: JSON.stringify({
+						customer_send_id: customer_send_id,
+						customer_accept_id: customer_accept_id,
+						goods_name: huowu,
+						goods_weight: zhong,
+						goods_capacity: tiji,
+						goods_package: baozhuang,
+						goods_count: jianshu,
+						special_need: needs,
+						good_worth: jiazhi,
+						pay_method: str,
+						wx_openid: openid
+					}),
+					success: function(msg) {
+						bootbox.setLocale("zh_CN");
+						bootbox.alert({
+							message: "提交订单成功",
+							size: "small"
+						})
+
+					},
+					error: function(xhr) {
+						alert("提交数据失败" + xhr.responseText);
+						bootbox.setLocale("zh_CN");
+						bootbox.alert({
+							message: "提交订单失败",
+							size: "small"
+						})
+					},
+				})
+			}
+
+		})
+	</script>
+
+</html>

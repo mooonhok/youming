@@ -1,0 +1,214 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-23 11:50:09
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-08-23 17:58:12
+*/
+*{
+	margin: 0;padding: 0;
+	font-family: "微软雅黑";
+	
+}
+html,body{height:100%; width:100%;
+         overflow:hidden; margin:0;
+         padding:0;}
+.box{
+	width: 100%;
+	/* height: 100%; */
+	position: absolute;
+}
+.xian{
+	width: 100%;
+	height: 1px;
+	background: #E7E7E7;
+	float: left;
+}
+.box1{
+	width: 100%;
+	float: left;
+}
+.name{
+	float: left;
+	width: 30%;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 3%;
+	font-size: 15px;
+}
+.phone{
+	float: right;
+	width: 60%;
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+	margin-right: 3%;
+	font-size: 15px;
+}
+.dizhi{
+	float: left;
+	width: 94%;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 3%;
+	font-size: 15px;
+}
+.tu{
+	float: left;
+	width: 30%;
+	height: 20px;
+	margin-top: 5px;
+	margin-left: 3%;
+}
+.tu img{
+	width: 15px;
+	height: 15px;
+}
+.bj{
+	float: left;
+	/* width: 45%; */
+	height: 20px;
+	margin-top: 5px;
+}
+.bj1{
+	float: left;
+	font-size: 14px;
+	color: #9B9B9B;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 5px;
+}
+.bj img{
+	width: 20px;
+	height: 20px;
+}
+.sc{
+	float: left;
+	/* width: 45%; */
+	height: 20px;
+	margin-top: 5px;
+	margin-left: 5%;
+}
+.sc1{
+	float: left;
+	font-size: 14px;
+	color: #9B9B9B;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 5px;
+}
+.sc img{
+	width: 20px;
+	height: 20px;
+}
+.tu2{
+	width: 40%;
+	float: right;
+}
+.xian1{
+	width: 100%;
+	height: 1px;
+	background: #E7E7E7;
+	float: left;
+	margin-top: 3px;
+}
+
+.box2-1{
+	width: 100%;
+	height: 250px;
+	background: white;
+	
+}
+.jj{
+	width: 40%;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-left: 30%;
+	text-align: center;
+}
+.name1{
+	width: 80%;
+	height: 20px;
+	float: left;
+	margin-left: 10%;
+	margin-top: 5px;
+	line-height: 20px;
+}
+.name2{
+	width: 70%;
+	float: right;
+}
+.name2 input{
+	width: 90%;
+	height: 20px;
+}
+.phone1{
+	width: 80%;
+	height: 20px;
+	float: left;
+	margin-left: 10%;
+	margin-top: 5px;
+	line-height: 20px;
+}
+.phone2{
+	width: 70%;
+	float: right;
+}
+.phone2 input{
+	width: 90%;
+	height: 20px;
+}
+.dizhi1{
+	width: 80%;
+	height: 20px;
+	float: left;
+	margin-left: 10%;
+	line-height: 20px;
+	margin-top: 10px;
+}
+.dizhi2{
+	width: 70%;
+	float: right;
+}
+.dizhi3 select{
+	width: 45%;
+	height: 20px;
+}
+.dizhi3{
+	float: left;
+	width: 80%;
+	height: 100px;
+	/* border: 1px solid red; */
+	margin-top: 2px;
+	margin-left: 10%;
+}
+.dizhi3-1{
+	width: 70%;
+	float: right;
+
+}
+.dizhi3-1 textarea{
+	width: 90%;
+	font-size: 14px;
+}
+.tijiao1{
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #24D9C9;
+	border-radius: 5px;
+	float: left;
+	margin-top: 5px;
+	margin-left: 10%;
+	font-size: 15px;
+	color: white;
+}
+.kong{
+	width: 100%;
+	height: 20px;
+	background:#E7E7E7; 
+}
+label{
+	font-size: 14px;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<link rel="stylesheet" href="css/wangshangxunjia.css">
+	<title>网上询价</title>
+</head>
+<body>
+<div class="box">
+	<div class="top">
+		<div class="wenzi">货物类型</div> 
+		<div class="text">
+			<input type="text" placeholder="必填项">
+		</div>		
+		
+	</div>
+	
+
+	<div class="center">
+	<div class="center_1">
+		<div class="wenzi">体积(m³)</div>
+		
+		<div class="text">
+		<input type="number" placeholder="必填项">
+		</div>
+		
+	</div>
+	
+	<div class="center_2">
+		<div class="wenzi">重量(吨)</div>
+		<div class="text">
+		<input type="number" placeholder="必填项">
+		</div>
+		
+	</div>
+		
+	</div>
+
+	<div class="foot">
+		<div class="foot_1">
+			<div class="wenzi">发站</div>
+			<div class="text1">
+				
+			</div>
+		<div class="fuhao"><img src="images/left_arrow.png" alt=""></div>
+		</div>
+		
+		<div class="foot_2">
+			<div class="wenzi">到站</div>
+		<div class="fuhao"><img src="images/left_arrow.png" alt=""></div>
+		</div>
+	</div>
+
+	<div class="xunjia">
+		询价
+	</div>
+	
+</div>
+	<div class="box2">
+		<div class="box2-1">
+			<div class="ok1">
+				确定
+			</div>
+			<div class="box2-2">
+				<select id="province1" onchange="getPro1()">
+					<option value="0">请选择</option>
+				</select>
+				
+				<select id="city1">
+					<option value="0">请选择</option>
+				</select>
+
+			</div>
+			
+				
+			
+
+		</div>		
+
+	</div>
+	<div class="box3">
+		<div class="box3-1">
+			<div class="ok2">
+				确定
+			</div>
+			<div class="box3-2">
+				<select  id="province2" onchange="getPro2()">
+					<option value="0">请选择</option>
+				</select>
+				
+				<select id="city2">
+					<option value="0">请选择</option>
+				</select>
+
+			</div>
+			
+				
+			
+
+		</div>		
+
+	</div>
+	
+</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	 $(".box2").css("display","none");
+	 $(".box3").css("display","none");
+	 $(".foot_1").on("click",function(){
+	 	// alert('ok');
+	 	$(".box2").css("display","block");
+	 	$(".box2").css("z-index","100");
+	 })
+	 $(".foot_2").on("click",function(){
+	 	// alert('ok');
+	 	$(".box3").css("display","block");
+	 	$(".box3").css("z-index","100");
+	 })
+
+	 $(".ok1").on("click",function(){
+	 	$(".box2").css("display","none");
+
+
+	 })
+	 $(".ok2").on("click",function(){
+	 	$(".box3").css("display","none");
+
+
+	 })		
+	</script>		
+	<script type="text/javascript">		
+	</script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script>
+		//判断openid是否已经被注册
+		var openid = $.cookie('openid');
+		if(openid != null) {
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/customer.php/wx_openid?wx_openid="+openid,
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'get',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					
+				}),
+				success: function(msg) {
+					//					alert("用户注册成功" + msg.result + "/////" + msg.desc + "//////" + msg.customer);
+					if(msg.result == 0) {
+						window.location.href = "http://mooonhok-cloudware.daoapp.io/weixin/register.html?page=2";
+					} 
+				},
+				error: function(xhr) {
+					bootbox.setLocale("zh_CN");
+					bootbox.alert({
+						message:"获取后台失败！"+xhr.responseText,
+						size:"small"
+					})
+					
+				}
+
+			});
+		}
+</script>
+	<script>
+   	//获取省份和城市列表1
+   	$.ajax({
+		            url :"http://mooonhok-cloudware.daoapp.io/city.php/province",
+		             beforeSend: function(request) {
+                        request.setRequestHeader("tenant-id", "Chenxizhang");  
+                    },
+			        dataType:'json',
+			        type:'get',
+			        contentType:"application/json;charset=utf-8",
+			        data:JSON.stringify({
+			        }),
+			        success:function(msg){
+//                        alert("提交goods结果"+msg.result+"/////"+msg.desc+"//////"+msg.province);
+                        for(var i=0;i<msg.province.length;i++){
+                         	$("#province1").append('<option value="' + msg.province[i].id + '">' + msg.province[i].name + '</option>');
+                        }
+				    },
+			        error:function(e){
+			            alert("省份列表1信息出错！");
+			        }
+	          });
+            
+			function getPro1() {	
+			     $("#city1").empty();
+				var pid=$("#province1 option:selected").val();
+				$.ajax({
+		            url :"http://mooonhok-cloudware.daoapp.io/city.php/city?pid="+pid,
+		             beforeSend: function(request) {
+                        request.setRequestHeader("tenant-id", "Chenxizhang");  
+                    },
+			        dataType:'json',
+			        type:'get',
+			        contentType:"application/json;charset=utf-8",
+			        data:JSON.stringify({
+			        
+			        }),
+			        success:function(msg){
+ //                      alert("city结果"+msg.result+"/////"+msg.desc+"//////"+msg.city);
+                        for(var i=0;i<msg.city.length;i++){
+                         	$("#city1").append('<option value="' + msg.city[i].id + '">' + msg.city[i].name + '</option>');
+                        }
+				    },
+			        error:function(e){
+		            alert("城市1列表信息出错！");
+			        }
+	          });
+           } 	
+   </script>
+<script>
+	//获取城市列表2
+		$.ajax({
+		            url :"http://mooonhok-cloudware.daoapp.io/city.php/province",
+		             beforeSend: function(request) {
+                        request.setRequestHeader("tenant-id", "Chenxizhang");  
+                    },
+			        dataType:'json',
+			        type:'get',
+			        contentType:"application/json;charset=utf-8",
+			        data:JSON.stringify({
+			        }),
+			        success:function(msg){
+//                        alert("提交goods结果"+msg.result+"/////"+msg.desc+"//////"+msg.province);
+                        for(var i=0;i<msg.province.length;i++){
+                         	$("#province2").append('<option value="' + msg.province[i].id + '">' + msg.province[i].name + '</option>');
+                        }
+				    },
+			        error:function(e){
+			            alert("省份列表2信息出错！");
+			        }
+	          });
+            
+			function getPro2() {	
+			     $("#city2").empty();
+				var pid=$("#province2 option:selected").val();
+				$.ajax({
+		            url :"http://mooonhok-cloudware.daoapp.io/city.php/city?pid="+pid,
+		             beforeSend: function(request) {
+                        request.setRequestHeader("tenant-id", "Chenxizhang");  
+                    },
+			        dataType:'json',
+			        type:'get',
+			        contentType:"application/json;charset=utf-8",
+			        data:JSON.stringify({
+			        }),
+			        success:function(msg){
+ //                      alert("city结果"+msg.result+"/////"+msg.desc+"//////"+msg.city);
+                        for(var i=0;i<msg.city.length;i++){
+                         	$("#city2").append('<option value="' + msg.city[i].id + '">' + msg.city[i].name + '</option>');
+                        }
+				    },
+			        error:function(e){
+		            alert("城市1列表信息出错！");
+			        }
+	          });
+          } 	
+</script>
+
+
+<script type="text/javascript">
+		$(".xunjia").on("click",function(){
+			alert('ok');
+		})
+	</script>
+</html>

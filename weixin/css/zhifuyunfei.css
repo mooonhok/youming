@@ -1,0 +1,115 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-16 09:29:44
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-08-18 11:55:37
+*/
+*{margin:0 auto;padding:0;
+box-sizing:border-box;}
+a{text-decoration:none}
+.box{width: 100%;
+    background:#EDEDED;}
+/* top */
+.top{background: white;
+	width: 100%;height: 60px;
+	}
+
+.top1{float: left;
+     margin-left: 6%;
+     line-height: 60px;
+     color: #C6C6C6;
+     font-size: 18px; 
+     font-weight: bold;}
+
+.top2{float: right;
+      margin-right: 6%;
+      margin-top: 20px;}
+
+.top2 img{width: 20px;height: 20px;}
+
+/* danghao */
+
+.danghao{width: 100%;height: 50px;
+         }
+
+.danghao1{float: right;
+          margin-right: 6%;
+          font-size: 18px;
+          font-weight: bold;
+          color: #89E3DA;
+          line-height: 50px;}
+
+.yunshufei{width: 100%;height:80px;
+          background:white;
+         text-align: center;}
+
+.shurukuang{margin-top: 10px;}
+
+.shurukuang input{width: 90%;height: 40px;
+                  border:0;outline-style: none;
+                  font-size: 26px;
+                  text-align: center;
+                 }
+/* youhui */
+.youhui{width: 100%;height: 50px;
+        margin-top: 2px;
+        background:white;}
+
+.youhui1{float: left;margin-left: 5%;
+         line-height: 50px;}
+
+.youhui2{float: right;margin-right: 5%;
+        line-height: 50px;font-size: 16px;
+        }
+.youhui2 a{color: #A7A7A7;}
+
+/* zhifu */
+.zhifu{margin-top: 20px;
+       width: 100%; height: 140px;}
+.zhifu img{width: 30px;height: 30px;}
+.weixin{width: 100%;height: 60px;
+        background: white;}
+
+.shunshou{width: 100%;height: 60px;
+        background: white;
+        margin-top: 2px;}
+.center{float: left;margin-left: 5%;
+   margin-top: 15px;
+    }
+.center1{font-size: 18px;float: left;
+         margin-left:5px;line-height: 60px;}
+.dian1{float: right;margin-right: 5%;
+      margin-top: 20px;}
+
+.dian2{float: right;margin-right: 5%;
+      margin-top: 20px;}
+.dian1 .img1{width: 20px;height: 20px;}
+.dian2 .img2{width: 20px;height: 20px;}
+
+
+/* foot */
+.foot{width: 100%;height: 50px;
+      position:absolute; bottom:0;}
+.foot1{float: left;width: 33%;
+	text-align: center;line-height: 50px;
+    font-size: 18px;
+    background: white;}
+
+.foot1 span{color: red;}
+
+.foot2{float: left;width: 34%;
+	text-align: center;line-height: 50px;
+    font-size: 18px;
+	color: white;
+    background: green;
+    }
+
+
+
+
+
+
+
+
+
+

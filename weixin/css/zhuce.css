@@ -1,0 +1,99 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-17 15:05:16
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-08-17 17:05:30
+*/
+*{
+				margin:0 auto;
+				padding:0;
+				box-sizing:border-box;
+			}
+			.content{
+				background-color:#24D9C9;
+				width:100%;
+			}
+			.box_top{
+				width: 100%;
+				height:150px;
+                background-color:#24D9C9;	
+			}
+			.box_top1{
+				width: 100%;
+				height: 60px;
+				padding-top: 80px;
+			    font: 30px "微软雅黑";
+                text-align: center;
+                color:white;
+			}
+			.box_center{
+				border-radius:10px;
+				width: 90%;
+				height: 250px;
+				background-color:#2EBEB1;
+				font: 30px "微软雅黑";
+                text-align: center;
+                color:white;				
+			}
+			.box_center1{
+				width: 100%;
+				height: 50px;
+				margin-top: 15px;
+                line-height:50px;
+               				
+			}
+			.box_center1 span{
+				height: 50px;
+				font: 18px "微软雅黑";
+                color:white;				
+			}
+			.box_center1 input{
+				border-radius:50px;
+				width: 85%;
+				height:40px;
+				background-color:#42A199;
+                line-height: 45px;
+                border-style: none;
+                font: 16px "微软雅黑";
+                color:white;
+                padding:0 18px;
+                outline: 0;
+			}
+			.box_center1 input::-webkit-input-placeholder {
+        		color:white;  
+    		}  
+    		.box_center1 input::-moz-placeholder {
+       			color:white;  
+       			opacity:1;  
+    		}  
+    		.box_center1 input::-moz-placeholder {
+       			color:white;  
+       			opacity:1;  
+   		 	}  
+    		.box_center1 input:-ms-input-placeholder {
+       			color:white;   
+    		}  
+
+			.box_buttom{
+				width: 100%;
+				height: 100px;
+                text-align: center;
+                margin-top: 20px;
+
+			}
+			#submit{
+				border-radius:50px;
+				width: 75%;
+				height:50px;
+				background-color:#005757;
+				margin-top: 22px;
+                font: 25px "微软雅黑";
+                line-height: 50px;
+                text-align: center;
+                color:#48D1CC;
+                background-color:white;
+			}
+			.kong{
+				display: inline-block;
+				width: 30px;
+			}

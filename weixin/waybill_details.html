@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<title>我的运单</title>
+		<link rel="stylesheet" href="css/wodeyundan2.css">
+         <script type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="box">
+			<!-- top -->
+			<div class="top"></div>
+			<div class="xian1"></div>
+			<!-- top1 -->
+			<div class="top1">
+				<div class="top1-1">
+					<h4>地图模式</h4>
+				</div>
+				<div class="top1-2">
+					<h4>文字模式</h4>
+				</div>
+			</div>
+			<div class="top1-3"></div>
+			<div class="top1-4"></div>
+
+			<!-- foot -->
+			<div class="foot">
+				<div class="foot1">
+					<div class="foot1-1">
+
+						<div class="syuan1"></div>
+						<div class="sxian1"></div>
+						<div class="syuan2"></div>
+						<div class="sxian2"></div>
+						<div class="syuan3"></div>
+						<div class="sxian3"></div>
+						<div class="syuan4"></div>
+						<div class="sxian4"></div>
+						<div class="syuan5"></div>
+						<div class="sxian5"></div>
+						<div class="syuan6"></div>
+						<div class="sxian6"></div>
+						<div class="syuan7"></div>
+
+						<div style="clear:both;"></div>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<div class="foot2"></div>
+
+				<div class="xian"></div>
+
+				<div class="foot3"></div>
+				<div class="xian"></div>
+
+				<div class="foot4">	</div>
+
+				<div class="xian"></div>
+
+				<div class="foot5"></div>
+
+				<div class="xian"></div>
+
+				<div class="foot6"></div>
+
+				<div class="xian"></div>
+
+				<div class="foot7"></div>
+
+				<div class="xian"></div>
+
+				<div class="tianchong"></div>
+				<div class="foot8"></div>
+
+				<div style="clear:both;"></div>
+			</div>
+
+			<div class="center">
+				<div class="center1-1"></div>
+				<div class="center1-2"></div>
+
+				<div class="xian1"></div>
+				<div class="ditu">
+					<!--<img src="images/ditu.png" alt="">-->
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(".top1-3").hide();
+		$(".center").css("display", "none");
+		$(".top1-1").on("click", function() {
+			$(".top1-4").hide();
+			$(".foot").css("display", "none");
+			$(".top1-3").show();
+			$(".center").css("display", "block");
+		})
+		$(".top1-2").on("click", function() {
+			$(".top1-3").hide();
+			$(".center").css("display", "none");
+			$(".top1-4").show();
+			$(".foot").css("display", "block");
+		})
+	</script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script>
+		//判断openid是否已经被注册
+		var openid = $.cookie('openid');
+		if(openid != null) {
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/customer.php/wx_openid?wx_openid="+openid,
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'get',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					
+				}),
+				success: function(msg) {
+					//					alert("用户注册成功" + msg.result + "/////" + msg.desc + "//////" + msg.customer);
+					if(msg.result == 0) {
+						window.location.href = "http://mooonhok-cloudware.daoapp.io/wx_register.php";
+					} 
+				},
+				error: function(xhr) {
+					bootbox.setLocale("zh_CN");
+					bootbox.alert({
+						message:"获取后台失败！"+xhr.responseText,
+						size:"small"
+					})
+					
+				}
+
+			});
+		}
+</script>
+	<script>
+		//获取order——id
+	(function($){
+         $.getUrlParam = function(name){
+         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+         var r = window.location.search.substr(1).match(reg);
+         if (r!=null) return unescape(r[2]); return null;
+         }
+         })(jQuery);
+    $(function(){
+          var order_id=$.getUrlParam('order_id');
+          alert(order_id);
+          var a="<p>运单号 :<span>"+order_id+"</span></p>";
+          $(".top").html(a);
+          $.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/order.php/wx_order_z",
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'post',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					order_id:order_id
+				}),
+				success: function(msg) {
+					if(msg.orders==null){
+						alert("订单不存在");
+					}else{
+					var sendcity="发站:<span>"+msg.orders.sendcity+"</span>";
+					$(".center1-1").html(sendcity);
+					var acceptcity="到站:<span>"+msg.orders.receivercity+"</span>";
+					$(".center1-2").html(sendcity);
+					var xiadan="<div class='foot2-1'>下单成功</div><div class='foot2-2'>"
+						      +msg.orders.order_time0+"</div>";
+					$(".foot2").html(xiadan);
+				    var ruku="<div class='foot3-1'>入库</div><div class='foot3-2'>"
+	                          +msg.orders.order_time1+"</div>";
+	                 $(".foot3").html(ruku);  
+	                var chuku="<div class='foot4-1'>出库</div><div class='foot4-2'>"
+					          +msg.orders.order_time2+"</div>";
+					 $(".foot4").html(chuku);
+					 if(msg.orders.plate_number==null){
+					 	msg.orders.plate_number="";
+					 }
+					var zaitu="<div class='foot5-1'><p>在途 <span>"+msg.orders.plate_number+"</span></p></div><div class='foot5-2'>"
+						      +msg.orders.order_time3+"</div>";
+					 $(".foot5").html(zaitu);
+					 var daoda="<div class='foot6-1'>到达</div><div class='foot6-2'>"
+					          +msg.orders.order_time4+"</div>";
+					 $(".foot6").html(daoda);
+					 var shouhuo="<div class='foot7-1'>到达</div><div class='foot7-2'>"
+					          +msg.orders.order_time5+"</div>";
+					 $(".foot7").html(shouhuo);
+					 if(msg.orders.order_time0!=null){
+					 	$(".syuan1").css("background", "#02F78E");
+					 	if(msg.orders.order_time1!=null){
+					 		$(".syuan2").css("background", "#02F78E");
+					 		$(".sxian1").css("background", "#02F78E");
+					 		if(msg.orders.order_time2!=null){
+					 			$(".syuan3").css("background", "#02F78E");
+					 		    $(".sxian2").css("background", "#02F78E");
+					 		    if(msg.orders.order_time3!=null){
+					 		    	$(".syuan4").css("background", "#02F78E");
+					 		        $(".sxian3").css("background", "#02F78E");
+					 		        if(msg.orders.order_time4!=null){
+					 		        	$(".syuan5").css("background", "#02F78E");
+					 		            $(".sxian4").css("background", "#02F78E");
+					 		          if(msg.orders.order_time5!=null){
+					 		          	$(".syuan6").css("background", "#02F78E");
+					 		            $(".sxian5").css("background", "#02F78E");
+					 		            $(".sxian6").css("background", "#02F78E");
+					 		            $(".syuan7").css("background", "#02F78E");
+					 		           var wc="<div class='foot8-1'>运输完成</div>";
+					 		           $(".foot8").html(wc);
+					 		          }
+					 		        }
+					 		    }
+					 		}
+					 	}
+					 }	
+					};
+				},
+				error: function(xhr) {
+					alert("运单不存在");
+				}
+			});
+          });
+	</script>
+</html>

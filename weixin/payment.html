@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <link rel="stylesheet" href="css/zhifuyunfei.css">
+        <title>支付费用</title>
+         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+         <script type="text/javascript">
+         $(function(){
+                //改变div的高度
+                $(".box").css("height", $(window).height());
+            });
+    </script>
+    </head>
+    <body>
+   
+
+    <div class="box">
+    <!-- top -->
+    <div class="top">
+    <div class="top1">扫一扫运单条码</div>
+	<div class="top2"><img src="images/saoma.png" alt=""></div>    	
+    </div>
+
+    <!-- danghao -->
+    <div class="danghao">
+    	<div class="danghao1">输入运单号</div>
+    </div>
+    
+    <div class="yunshufei">
+    <h3>运输费（元）</h3>
+    <div class="shurukuang">
+    <input type="number">	
+    </div>
+     </div>
+
+    <!-- youhui -->
+    <div class="youhui">
+    <div class="youhui1"><h3>优惠券</h3></div>
+    <div class="youhui2"><a href="">登录会员查看可用优惠卷 ></a></div>
+    	
+    </div>
+
+    <!-- zhifu -->
+    <div class="zhifu">
+    <div class="weixin">
+    	<div class="center"><img src="images/zhifu01.png" alt=""></div>
+		<div class="center1">
+			微信支付
+		</div>
+		<div class="dian1">
+			<img src="images/dian01.png" alt="" class="img1">
+		</div>
+
+    </div>
+    <!-- <div class="shunshou">
+    	<div class="center"><img src="images/zhifu02.png" alt=""></div>
+		<div class="center1">
+			顺手付支付
+		</div>
+		<div class="dian2">
+			<img src="images/dian01.png" alt="" class="img2">
+		</div> -->
+
+
+    <!-- </div> -->
+    </div>
+
+    <!-- foot -->
+    <div class="foot">
+    <div class="foot1">以优惠<span>￥0</span></div>
+    <div class="foot1">实际支付<span>￥0</span></div>
+    <div class="foot2">确认支付</div>
+    	
+    </div>
+
+    </div>
+
+
+    </body>
+   
+
+    <script type="text/javascript">
+    	$('.top2').on('click',function(){
+    		alert('ok')
+    	})
+    </script>
+
+    <script type="text/javascript">
+    	$('.dian1').on('click',function(){
+    		if($('.img1').attr("src","images/dian02.png")){
+    			$('.img2').attr("src","images/dian01.png")
+    		}
+    		
+
+    	})
+    	$('.dian2').on('click',function(){
+    		if ($('.img2').attr("src","images/dian02.png")) {
+    		$('.img1').attr("src","images/dian01.png")
+            }
+    	})
+    </script>
+
+    <script type="text/javascript">
+    	$('.foot2').on('click',function(){
+    		alert('ok')
+    	})
+    </script>
+   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script>
+		//判断openid是否已经被注册
+		var openid = $.cookie('openid');
+		if(openid != null) {
+			$.ajax({
+				url: "http://mooonhok-cloudware.daoapp.io/customer.php/wx_openid?wx_openid="+openid,
+				beforeSend: function(request) {
+					request.setRequestHeader("tenant-id", "1");
+				},
+				dataType: 'json',
+				type: 'get',
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					
+				}),
+				success: function(msg) {
+					//					alert("用户注册成功" + msg.result + "/////" + msg.desc + "//////" + msg.customer);
+					if(msg.result == 0) {
+						window.location.href = "register.html";
+					} else {
+						alert(openid);
+					}
+				},
+				error: function(xhr) {
+					bootbox.setLocale("zh_CN");
+					bootbox.alert({
+						message:"获取后台失败！"+xhr.responseText,
+						size:"small"
+					})
+					
+				}
+
+			});
+		}
+</script>
+
+  
+    	
+  
+
+</html>
